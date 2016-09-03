@@ -1,0 +1,119 @@
+<message-modal (onClosed)="messageModalClosed($event)">
+</message-modal>
+<div *ngIf="IsVisible" class="modal fade show in danger" id="personalprofilemodal" role="dialog">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title">Login</h2>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="LoginForm" novalidate>
+					<div class="form-group">
+						<div>
+							<label class="radio-inline">
+								<strong>Do you already have a Tsawwassen Tennis Club password?
+                                    <br>
+                                    <input #angularcb type="checkbox" checked="true" (change)="already_have_a_password = angularcb.checked" />
+                                    <span *ngIf="already_have_a_password">Yes, I have a TTC Password</span>
+                                    <span *ngIf!="already_have_a_password">No, I do not yet have a TTC Password</span>
+                                </strong>
+							</label>
+						</div>
+					</div>
+
+					<!-- Family Name -->
+					<div class="form-group">
+						<label for="firstname">First Name</label>
+						<input type="text" class="form-control" id="firstname" #firstname="ngForm" [formControl]="LoginForm.controls['firstname']"
+							[(ngModel)]="member.firstname">
+						<div *ngIf="firstname.control.hasError( 'required') && !firstname.control.pristine" class="alert alert-danger">
+							First name is a required field
+						</div>
+					</div>
+
+					<!-- Family Name -->
+					<div *ngIf!="already_have_a_password">
+						<div class="form-group">
+							<label for="familyname">Family Name</label>
+							<input type="text" class="form-control" id="familyname" #familyname="ngForm" [formControl]="LoginForm.controls['familyname']"
+								[(ngModel)]="member.familyname">
+							<div *ngIf="familyname.control.hasError( 'required') && !familyname.control.pristine" class="alert alert-danger">
+								Family Name is a required field
+							</div>
+						</div>
+					</div>
+
+					<!-- Email Address -->
+					<div class="form-group">
+						<label for="emailaddress">Email Address</label>
+						<input type="email" class="form-control" id="emailaddress" #emailaddress="ngForm" [formControl]="LoginForm.controls[ 'emailaddress']"
+							[(ngModel)]="member.emailaddress">
+						<div *ngIf="emailaddress.control.hasError( 'invalidEmailAddress') && !emailaddress.control.pristine" class="alert alert-danger">
+							Not a valid Email Address
+						</div>
+					</div>
+
+					<!-- Date of Birth -->
+					<div *ngIf!="already_have_a_password">
+						<div class="form-group">
+							<label for="dob">Date of Birth</label>
+							<input type="text" class="form-control" id="dob" placeholder="YYYY-MM-DD" #dob="ngForm" [formControl]="LoginForm.controls['dob']"
+								[(ngModel)]="member.dob" (blur)="onBlurDoB()">
+							<div *ngIf="dob.control.hasError('required') && !dob.control.pristine" class="alert alert-danger">
+								Date of Birth is a required field
+							</div>
+							<div *ngIf="dob.control.hasError('invalidDate') && !dob.control.pristine" class="alert alert-danger">
+								Not a valid date
+							</div>
+						</div>
+					</div>
+
+					<!-- Postal Code -->
+					<div *ngIf!="already_have_a_password">
+						<div class="form-group">
+							<label for="postcode">Postal Code / Zip Code</label>
+							<input type="text" class="form-control" id="postcode" #postcode="ngForm" [formControl]="LoginForm.controls[ 'postcode']"
+								[(ngModel)]="member.postcode" (blur)="onBlurPostCode()">
+							<div *ngIf="postcode.control.hasError( 'invalidPostCode') && !postcode.control.pristine" class="alert alert-danger">
+								Not a valid Canadian Postal Code nor American Zip Code
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="newpassword">Password</label>
+						<input type="password" class="form-control" id="newpassword" #password="ngForm" [formControl]="LoginForm.controls['password']"
+							[(ngModel)]="member.password">
+						<div *ngIf="password.control.hasError( 'invalidPassword') && !password.control.pristine" class="alert alert-danger">
+							Password must have between 8 and 16 characters
+						</div>
+					</div>
+
+					<div *ngIf!="already_have_a_password">
+						<div class="form-group">
+							<label for="confirmpassword">Confirm Password</label>
+							<input type="password" class="form-control" id="confirmpassword" #confirmpassword="ngForm" [formControl]="LoginForm.controls['confirmpassword']"
+								[(ngModel)]="member.confirmpassword">
+							<div *ngIf="confirmpassword.control.hasError( 'invalidPassword') && !confirmpassword.control.pristine" class="alert alert-danger">
+								Password must have between 8 and 16 characters
+							</div>
+							<div *ngIf="member.password != member.confirmpassword && !confirmpassword.control.pristine" class="alert alert-danger">
+								Confirm Password does not match
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" (click)="onLogin()" [disabled]="!LoginForm.valid && 
+                !(  already_have_a_password && 
+                    emailaddress.valid && 
+                    password.valid && 
+                    firstname.valid)">
+					Login
+				</button>
+				<button type="button" class="btn btn-warning" (click)="hideForm()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

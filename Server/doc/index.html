@@ -1,0 +1,310 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TestDoc</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/modernizr.js"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">TestDoc</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> TestDoc</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="ttcwebsite">TTCWebSite</h1>
+				<p>The site is running at <a href="https://ttc-website-ng2.herokuapp.com">https://ttc-website-ng2.herokuapp.com</a>.  The JS framework being used is Angular 2.0 (ng2) with NodeJS / Express providing the backend services.  MongoDB 3.2 provides the database services.  This repository forms part of a wider professional software engineering portfolio maintained by Rod Monk.  This repo is NOT the complete source code, as certain key information has been removed.  Nevertheless, to the maximum extent possible this repo is a close approximation of the source code.  It is currently actively being upgraded as noted in the ToDo list found below.<br>
+					<br>
+					<b>NOTE 1:</b>
+					A first visit to the site may seem slow, as it is running on a free Heroku servelet, which goes offline if the site is not accessed for more than 60 minutes.
+					<br>
+					<b>NOTE 2:</b>
+					If the reader wishes to actually Login, use the following Login credentials: name: &#39;test&#39;, email address: test@example.com, password: 12345678.<br>All data that is accessible from this site is &#39;fake data&#39;, hence no damage can accrue.<br>
+					<br>
+				Other than demonstrating the use of Angular2 and Typescript, the goals of the site are the following:</p>
+				<ol>
+					<li>To provide all of the content that the legacy &#39;static&#39; website (&#39;Home page&#39;, &#39;How to Find Us&#39;, &#39;Calendar&#39;, &#39;News&#39;, &#39;About Us&#39;, &#39;Contact Us&#39;, etc.</li>
+					<li>To be secure (see <b>Security</b> below).</li>
+					<li>To be responsive.</li>
+					<li>To demonstrate the use of REST-ful design principles in the crafting of the API end-points.
+						<li>Allow members to &#39;Login&#39;.</li>
+						<li>Allow members to securely search the Membership contacts details (once logged in).</li>
+						<li>Allow the membership to modify their own profile details.</li>
+						<li>Allow the members to change their password.</li>
+						<li>Provide an application form for new members.</li>
+						<li>A means for existing members to renew their membership.</li>
+						<li>A means to distinguish executive members (who are given an extra range of privileges).</li>
+						<li>ToDo: A means for the membership to review historical eBlasts.</li>
+						<li>ToDo: A new <b>TennisBC Export</b> function: this will allow a member of the executive to export the membership list to TennisBC (required once per year).</li>
+						<li>A <b>Fee Accounting</b> function: When applying, will allow a member to specify other members within the same family; this feature will allow the site to auto-determine each family&#39;s yearly fees.</li>
+						<li>A <b>Document Management</b> function: members of the executive will be able to add documents to a document repository (e.g. minutes of meetings, club bylaws, etc.).  The general membership will be able to view these documents.</li>
+						<li>A <b>News Item Management</b> function: members of the executive will be able to add news items to the website (typically club successes in league play).  The general membership will be able to view these news items.  A news item consists of text and pictures.  They are to be displayed in the website in reverse chronological order.</li>
+						<li>A technical interface to FogBugz which will automatically record software failures (FogBugz is an issue tracking system).</li>
+				</ol>
+				<h4>Technologies</h4>
+				NodeJS, Express, Angular2, Bootstrap, MongoDB, Mongoose, Git, GitHub, Wepback, Gulp, and several npm packages (jwt-simple, bcrypt, async, gridfs-stream, moment, lodash, express-session, and several others).
+				<h4>ToDo List</h4>
+				<ul>
+					<li>Export to TennisBC</li>
+					<li>Historical eBlasts are not yet available.</li>
+				</ul>
+				<h4>Database</h4>
+				MongoDB available via MongoLab.
+				<h4>Server</h4>
+				Currently running on a Heroku servelet.
+				<h4>Security</h4>
+				<ol>
+					<li>Passwords are hashed (bcrypt) and stored to the database, along with the member&#39;s other details.</li>
+					<li>SSL is assumed throughout.</li>
+					<li>Session Management</li>
+					<ul>
+						<li>Users are identified using JSON Web Tokens (JWT); these are encrypted and not decodable when saved in Local Storage.</li>
+						<li>Independently of JWT usage, typical session management is active.  Session tokens time-out periodically and the user is then required to re-Login.</li>
+						<li>The client-side software prohibits users from accessing functions to which they are not authorized to use.  Nevertheless, at the server, further role-based checks are applied before executing an API endpoint.</li>
+					</ul>
+				</ol>
+				<h4>File Structure</h4>
+				<pre><code>ttc-website-ng2/
+├── App/                            * Where our client-side application code <span class="hljs-keyword">is</span> stored
+│   ├── services/                   * Angular2 services
+│   │   ├── document.service.<span class="hljs-keyword">ts</span>     * Provides the http services <span class="hljs-keyword">to</span> the server concerning <span class="hljs-keyword">all</span> things Documents
+│   │   ├── member.service.<span class="hljs-keyword">ts</span>       * Provides the http services <span class="hljs-keyword">to</span> the server concerning <span class="hljs-keyword">all</span> things Members
+│   │   ├── newsitem.service.<span class="hljs-keyword">ts</span>     * Provides the http services <span class="hljs-keyword">to</span> the server concerning <span class="hljs-keyword">all</span> things News Items
+│   │   ├── platform.service.<span class="hljs-keyword">ts</span>     * Provides services <span class="hljs-keyword">to</span> capture the client software platform that <span class="hljs-keyword">a</span> User <span class="hljs-keyword">is</span> running
+│   │   ├── user.service.<span class="hljs-keyword">ts</span>         * Provides services <span class="hljs-keyword">to</span> capture the client software platform that <span class="hljs-keyword">a</span> User <span class="hljs-keyword">is</span> running
+│   │   └── valdiation.service.<span class="hljs-keyword">ts</span>   * Provides <span class="hljs-keyword">a</span> <span class="hljs-keyword">number</span> of common form validation services
+|   | 
+│   ├── models/                     * The various data models
+│   │   ├── member.<span class="hljs-keyword">ts</span>               * A member structure
+│   │   ├── newsitem.<span class="hljs-keyword">ts</span>             * A newsitem structure
+│   │   ├── renewal.<span class="hljs-keyword">ts</span>              * A renewal structure (members <span class="hljs-string">'renew'</span> each year)
+│   │   └── places.<span class="hljs-keyword">ts</span>               * Holds <span class="hljs-keyword">all</span> the <span class="hljs-string">'places'</span> that members could <span class="hljs-keyword">be</span> living (Delta, Surrey, etc.)
+|   | 
+│   ├── about-us                    * The About Us screen
+│   ├── calendar                    * The Calendar screen
+│   ├── <span class="hljs-keyword">change</span>-password             * The modal that allows <span class="hljs-keyword">a</span> member <span class="hljs-keyword">to</span> <span class="hljs-keyword">change</span> their password
+│   ├── communications-consent      * A modal <span class="hljs-keyword">to</span> <span class="hljs-keyword">display</span> the comunications agreement that <span class="hljs-keyword">all</span> members must agree <span class="hljs-keyword">to</span>
+│   ├── <span class="hljs-keyword">confirm</span>-<span class="hljs-keyword">delete</span>              * A general Confirm Delete modal
+│   ├── contact-us                  * The Contact Us screen
+│   ├── document-manager            * The Document Manager screen (allows <span class="hljs-keyword">to</span> both <span class="hljs-built_in">add</span> <span class="hljs-built_in">and</span> <span class="hljs-keyword">view</span> club documents)
+│   ├── fee-configuration           * The Fee Configuration screen (useful <span class="hljs-keyword">to</span> the Treasurer <span class="hljs-built_in">and</span> Admin personnel)
+│   ├── fee-manager                 * The Fee Manager screen (mostly <span class="hljs-keyword">for</span> use by the Treasurer)
+│   ├── home                        * The Home screen
+│   ├── <span class="hljs-keyword">join</span>                        * The Join modal which allows othersiders <span class="hljs-keyword">to</span> apply <span class="hljs-keyword">to</span> <span class="hljs-keyword">join</span> the club
+│   ├── login                       * The Login modal
+│   ├── liability-agreement         * A modal <span class="hljs-keyword">to</span> <span class="hljs-keyword">display</span> the liability agreement that <span class="hljs-keyword">all</span> members must agree <span class="hljs-keyword">to</span>
+│   ├── logout                      * The Logout modal
+│   ├── message                     * A general modal <span class="hljs-keyword">for</span> displaying <span class="hljs-keyword">messages</span>
+│   ├── mission-<span class="hljs-built_in">and</span>-<span class="hljs-built_in">values</span>          * The Mission &amp; Values modal
+│   ├── newsitem                    * The News Item screen (displays News Items)
+│   ├── newsitem-manager            * The News Item Manager modal (News Items are published here)
+│   ├── online-<span class="hljs-keyword">help</span>                 * The Online Help screen
+│   └── personal-<span class="hljs-keyword">profile</span>            * The Personal Profile modal
+│   └── <span class="hljs-built_in">search</span>-membership           * The Renew Membership modal
+│   └── <span class="hljs-built_in">search</span>-membership           * The Search Membership screen
+|   | 
+|   └── ttc-bundle.js               * Webpack output <span class="hljs-keyword">file</span>
+|   
+├── Assets/                         * various project assets
+│   ├── css/                        * Project CSS <span class="hljs-keyword">files</span>
+│   ├── images/                     * Project images
+│   ├── libs/                       * <span class="hljs-number">3</span>rd party libraries
+│   └── js/                         * Project utilities
+|   
+├── favicon.ico                     * Project favicon
+├── Server/                         * NodeJS <span class="hljs-keyword">source</span> code
+│   ├── member_roles.<span class="hljs-keyword">ts</span>             * Role-based access control (RBAC) configuration
+│   ├── Server.<span class="hljs-keyword">ts</span>                   * The main server <span class="hljs-keyword">source</span> <span class="hljs-keyword">file</span> (contains the Express setup)
+│   ├── ttcDB.<span class="hljs-keyword">ts</span>                    * CRUD operations <span class="hljs-keyword">to</span> / from the database
+│   ├── ttcGmail.<span class="hljs-keyword">ts</span>                 * Retrieves historical emails from gmail
+│   ├── ttcGridFS.<span class="hljs-keyword">ts</span>                * Stores / retrieves <span class="hljs-keyword">files</span> from GridFS
+│   ├── ttcMailChimp.<span class="hljs-keyword">ts</span>             * Update MailChimp with email addresses
+│   ├── ttcGmail.<span class="hljs-keyword">ts</span>                 * Retrieves historical emails from gmail
+│   └── ttcTrack.<span class="hljs-keyword">ts</span>                 * Automatic issue tracking <span class="hljs-keyword">to</span> FogBugz
+|   
+├── <span class="hljs-built_in">index</span>.html                      * HTML entry point
+├── package.json                    * JavaScript dependencies
+├── README.md                       * This <span class="hljs-keyword">file</span>
+├── tsconfig.json                   * Configures the TypeScript <span class="hljs-keyword">compiler</span>
+├── tslint.json                     * Configures our TypeScript linter 
+└── typings/                        * tsd managed typings
+</code></pre>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Internals</span>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_archive_authcode_.html">"<wbr>Server/<wbr>Archive/authcode"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_archive_refreshtoken_.html">"<wbr>Server/<wbr>Archive/refreshtoken"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_archive_token_.html">"<wbr>Server/<wbr>Archive/token"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_server_.html">"<wbr>Server/<wbr>Server"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_error_classes_.html">"<wbr>Server/error.classes"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_member_roles_.html">"<wbr>Server/member_<wbr>roles"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_ttcdb_.html">"<wbr>Server/ttcDB"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_ttcgmail_.html">"<wbr>Server/ttc<wbr>Gmail"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_ttcgridfs_.html">"<wbr>Server/ttc<wbr>GridFS"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_ttcmailchimp_.html">"<wbr>Server/ttc<wbr>Mail<wbr>Chimp"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_server_ttctrack_.html">"<wbr>Server/ttc<wbr>Track"</a>
+					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-external-module tsd-is-external">
+						<a href="modules/_app_models_newsitem_.html">"app/models/newsitem"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<message-modal (onClosed)="messageModalClosed($event)"></message-modal>
+
+<div *ngIf="IsVisible" class="modal fade show in danger" id="personalprofilemodal" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Personal Profile</h2>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="PersonalProfileForm">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="Your first name" #firstname="ngForm" [formControl]="PersonalProfileForm.controls['firstname']"
+                            [(ngModel)]="member.firstname">
+                        <div *ngIf="firstname.control.hasError( 'required') && !firstname.control.pristine" class="alert alert-danger">
+                            First name is a required field
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familyname">Family Name</label>
+                        <input type="text" class="form-control" id="familyname" placeholder="Your family name" #familyname="ngForm" [formControl]="PersonalProfileForm.controls['familyname']"
+                            [(ngModel)]="member.familyname">
+                        <div *ngIf="familyname.control.hasError( 'required') && !familyname.control.pristine" class="alert alert-danger">
+                            Family Name is a required field
+                        </div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="text" class="form-control" id="dob" placeholder="YYYY-MM-DD" #dob="ngForm" [formControl]="PersonalProfileForm.controls['dob']"
+                            [(ngModel)]="member.dob" (blur)="onBlurDoB()">
+                        <div *ngIf="dob.control.hasError('required') && !dob.control.pristine" class="alert alert-danger">
+                            Date of Birth is a required field
+                        </div>
+                        <div *ngIf="dob.control.hasError('invalidDate') && !dob.control.pristine" class="alert alert-danger">
+                            Not a valid date
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" #address="ngForm" [formControl]="PersonalProfileForm.controls['address']"
+                            [(ngModel)]="member.address">
+                        <div *ngIf="address.control.hasError( 'required') && !address.control.pristine" class="alert alert-danger">
+                            Address is a required field
+                        </div>
+                    </div>
+
+                    <!-- Place -->
+                    <div class="form-group">
+                        <label for="place">Place</label>
+                        <select class="form-control" id="place" #place="ngForm" [formControl]="PersonalProfileForm.controls[ 'place']" [(ngModel)]="member.place">
+                            <option *ngFor="let p of places" [value]="p">{{p}}</option>
+                        </select>
+                    </div>
+                    <div *ngIf="place.control.hasError( 'required') && !place.control.pristine" class="alert alert-danger">
+                        Place is a required field
+                    </div>
+
+                    <!-- Postal Code -->
+                    <div class="form-group">
+                        <label for="postcode">Postal Code / Zip Code</label>
+                        <input type="text" class="form-control" id="postcode" #postcode="ngForm" [formControl]="PersonalProfileForm.controls[ 'postcode']"
+                            [(ngModel)]="member.postcode" (blur)="onBlurPostCode()">
+                        <div *ngIf="postcode.control.hasError( 'invalidPostCode') && !postcode.control.pristine" class="alert alert-danger">
+                            Not a valid Canadian Postal Code nor American Zip Code
+                        </div>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="emailaddress">Email Address</label>
+                        <input type="email" class="form-control" id="emailaddress" #emailaddress="ngForm" [formControl]="PersonalProfileForm.controls[ 'emailaddress']"
+                            [(ngModel)]="member.emailaddress">
+                        <div *ngIf="emailaddress.control.hasError( 'invalidEmailAddress') && !emailaddress.control.pristine" class="alert alert-danger">
+                            Not a valid Email Address
+                        </div>
+                    </div>
+
+                    <!-- Primary Phone -->
+                    <div class="form-group">
+                        <label for="primaryphone">Primary Phone</label>
+                        <input type="tel" class="form-control" id="primaryphone" #primaryphone="ngForm" [formControl]="PersonalProfileForm.controls['primaryphone']"
+                            [(ngModel)]="member.primaryphone" (blur)="onBlurPrimaryPhone()">
+                        <div *ngIf="primaryphone.control.hasError( 'required') && !primaryphone.control.pristine" class="alert alert-danger">
+                            Primary Phone is a required field
+                        </div>
+                    </div>
+
+                    <!-- Alternative Phone -->
+                    <div class="form-group">
+                        <label for="alternativephone">Alternative Phone</label>
+                        <input type="tel" class="form-control" id="alternativephone" #alternativephone="ngForm" [formControl]="PersonalProfileForm.controls['alternativephone']"
+                            [(ngModel)]="member.alternativephone" (blur)="onBlurAlternatePhone()">
+                    </div>
+
+                    <!-- Student -->
+                    <div class="form-inline">
+                        <div class="checkbox">
+                            <label for="student">
+                                <input  type="checkbox" class="form-control" id="student" 
+                                    #student="ngForm" [formControl]="PersonalProfileForm.controls[ 'student']"
+                                    [(ngModel)]="member.student"> 
+                                <strong>Student</strong>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Family Email Address -->
+                    <div class="form-group">
+                        <label for="familyemailaddress">Family Email Address</label>
+                        <input type="email" class="form-control" id="familyemailaddress" #familyemailaddress="ngForm" [formControl]="PersonalProfileForm.controls[ 'familyemailaddress']"
+                            [(ngModel)]="member.familyemailaddress">
+                    </div>
+
+                    <!-- Joining Year -->
+                    <div class="form-group">
+                        <label for="joiningyear">Joining Year</label>
+                        <input type="number" min="1970" class="form-control" id="joiningyear" #joiningyear="ngForm" [formControl]="PersonalProfileForm.controls[ 'joiningyear']"
+                            [(ngModel)]="member.joiningyear">
+                        <div *ngIf=" (joiningyear.control.hasError( 'required') || joiningyear.control.hasError(
+                'invalidJoiningYear')) && !joiningyear.control.pristine" class="alert alert-danger">
+                            Invalid Joining Year
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" [disabled]="PersonalProfileForm.pristine || 
+                        !PersonalProfileForm.valid ||
+                        !member.liabilityagreed ||
+                        !member.communicationsagreed" (click)="SaveChanges()">Save Changes</button>
+                <button type="button" class="btn btn-warning" (click)="hideForm()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "name": "ttc-website-ng2",
+  "globalDependencies": {
+    "assert": "github:DefinitelyTyped/DefinitelyTyped/assert/assert.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "assertion-error": "github:DefinitelyTyped/DefinitelyTyped/assertion-error/assertion-error.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "chai": "github:DefinitelyTyped/DefinitelyTyped/chai/chai.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "es2015-string": "registry:env/es2015-string#1.0.0+20160526151700",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008",
+    "jquery.simplemodal": "registry:dt/jquery.simplemodal#0.0.0+20160317120654",
+    "lodash": "github:DefinitelyTyped/DefinitelyTyped/lodash/lodash.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "moment": "github:DefinitelyTyped/DefinitelyTyped/moment/moment.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "moment-node": "github:DefinitelyTyped/DefinitelyTyped/moment/moment-node.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#ea054545eeb61cf7019133a3398d5e79cd5745ce",
+    "promise": "registry:dt/promise#7.1.1+20160602154553",
+    "require": "registry:dt/require#2.1.20+20160316155526"
+  },
+  "dependencies": {
+    "object-assign": "registry:npm/object-assign#4.0.1+20160301180549",
+    "webpack": "registry:npm/webpack#1.12.9+20160418172948"
+  }
+}

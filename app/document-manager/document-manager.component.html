@@ -1,0 +1,53 @@
+<div class="container">
+    <md-progress-bar *ngIf="isLoading" mode="indeterminate" color="warn"></md-progress-bar>
+    <div class="page-header">
+        <h3>Club Documents</h3>
+    </div>
+    <div [hidden]="!userService.hasPermission('documents:create')" class="panel">
+        <div class="panel-heading" style="background-image: none;">
+            <h4>Document Upload (PDF Files Only)</h4>
+        </div>
+        <br>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <span class="btn btn-warning btn-file"><input type="file" multiple (change)="fileChangeEvent($event)"/></span>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning" type="button" (click)="upload()">Upload</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="panel">
+        <div class="panel-heading" style="background-image: none;">
+            <h4>Club Documents (Minutes of Meetings, Bylaws, etc.)</h4>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th width="50%">Document Name</th>
+                    <th>Uploaded When</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let document of documents">
+                    <td><span class="glyphicon glyphicon-download"></span></td>
+                    <td><a href="{{document._id}}.{{document.filename.substr(document.filename.lastIndexOf('.')+1)}}" download="{{document.filename}}">{{document.filename}}</a></td>
+                    <td>{{document.uploadDate.slice (0,10)+' '+document.uploadDate.slice (11,19)+'Z'}}</td>
+                    <td>
+                        <button [disabled]="!userService.hasPermission('documents:delete')" type="button" class="btn btn-xs btn-default" (click)="removeDocument(document)">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

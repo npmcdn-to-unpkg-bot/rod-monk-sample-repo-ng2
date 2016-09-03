@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/aa502ef30409ec2525aad22d34914519d72e524e/fullCalendar/v1/fullCalendar.d.ts",
+    "raw": "registry:dt/fullcalendar/v1/fullcalendar#1.6.1+20160626234346",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/aa502ef30409ec2525aad22d34914519d72e524e/fullCalendar/v1/fullCalendar.d.ts"
+  }
+}

@@ -1,0 +1,16 @@
+<div *ngIf="IsVisible" class="modal fade show in danger" id="messagemodal">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">TTC Message</h2>
+            </div>
+            <div class="modal-body">
+                <h4>{{message}}</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="confirmDelete()">Confirm</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="cancelDelete()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

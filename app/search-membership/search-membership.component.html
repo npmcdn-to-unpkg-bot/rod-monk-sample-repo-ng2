@@ -1,0 +1,70 @@
+<div class="container">
+	<md-progress-bar *ngIf="isLoading" mode="indeterminate" color="warn"></md-progress-bar>
+	<div class="hidden-xs hidden-sm col-md-3">
+		<div class="panel" style="cursor:pointer">
+			<div class="panel-heading" style="background-image: none;">
+				<h3 class="h4 text-center">Club Rules
+				</h3>
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item">
+					<p class="h5">Proper tennis attire is required. Whites are not mandatory but non-marking tennis shoes ARE mandatory.
+					</p>
+				</li>
+				<li class="list-group-item">
+					<p class="h5">
+						Courts are restricted to TTC Members, their guests, and sanctioned League play only.
+					</p>
+				</li>
+				<li class="list-group-item">
+					<p class="h5">
+						Keys are for Adults only. Juniors are permitted to hold keys only at the discretion of the Executive.
+					</p>
+				</li>
+				<li class="list-group-item">
+					<p class="h5">
+						Please respect our neighbours&#39; privacy! All balls going over the fence into their backyards must be considered lost.
+						Members are not permitted to climb any fence or to enter any yard to retrieve balls.
+					</p>
+				</li>
+				<li class="list-group-item">
+					<p class="h5">
+						Damage to windscreens, nets, clubhouse, shed or other TTC property should be reported to any Executive Committee member,
+						whose names are on the 'Contact Us' page of this website.
+					</p>
+				</li>
+				<li class="list-group-item">
+					<p class="h5">
+						The last Member to leave the courts is responsible for ensuring that the court gates, clubhouse, and shed doors are securely
+						locked, all equipment [e.g. brooms, chairs etc.] is stored inside the clubhouse or shed, and all the court (see below)
+						and clubhouse lights are turned off.
+					</p>
+				</li>
+				<li class="list-group-item">
+					<p class="h5">
+						Please be sure to check and lock the gate, clubhouse and shed door because vandalism can cause enormous expense to the Club.
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="container-fluid">
+			<input type="search" id="searchKeyId" class="form-control input-sm" placeholder="Search Membership" [(ngModel)]="searchKey"
+				autofocus/>
+			<br>
+			<div class="panel">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" *ngFor="let x of filteredMembers">
+						<strong>{{x.firstname + ' ' + x.familyname}}</strong>
+						<p>
+							&nbsp;<a href="mailto:{{x.emailaddress}}">{{x.emailaddress}}</a><br> &nbsp;{{x.primaryphone}}
+							<br> &nbsp;{{x.alternativephone}}
+						</p>
+						<div class="clearfix visible-lg-block"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

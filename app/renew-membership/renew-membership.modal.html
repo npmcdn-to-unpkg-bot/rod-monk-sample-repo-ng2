@@ -1,0 +1,132 @@
+<message-modal (onClosed)="messageModalClosed($event)"></message-modal>
+<liability-agreement (onClosed)="liabilityAgreementClosed($event)"></liability-agreement>
+<communications-consent (onClosed)="communicationsConsentClosed($event)"></communications-consent>
+
+<div *ngIf="IsVisible" class="modal fade show in danger" id="renewmembershipmodal" role="dialog">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title">2016 Membership Renewal Form</h3>
+			</div>
+			<div class="modal-body">
+				<form name="memberForm" novalidate>
+					<p class="lead">
+						Hi {{member.firstname}},
+						<br>
+						<br> The renewal process has been simplified; you are only required to reaffirm the liability and communications agreements
+						and answer a few fee related questons. Nevertheless, please also ensure that your personal profile is up to date. You
+						can find your profile under "Members Only -> Personal Profile".
+						<br>
+						<br>Fee Payment instructions can be found on the <strong>About Us</strong> page.
+						<br>
+						<br> Have a great tennis season!
+						<br>
+					</p>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="text-center">Approximate Year That You Joined The Club</h4>
+						</div>
+						<div class="panel-body">
+
+							<!-- Joining Year -->
+							<div class="form-group">
+								<label for="joiningyear">Joining Year</label>
+								<input type="number" min="1970" class="form-control" id="joiningyear" #joiningyear="ngForm" [formControl]="RenewMembershipForm.controls[ 'joiningyear']"
+									[(ngModel)]="member.joiningyear">
+								<div class="alert alert-danger" *ngIf="
+								(joiningyear.control.hasError( 'required') || 
+								joiningyear.control.hasError('invalidJoiningYear')) && 
+								!joiningyear.control.pristine">
+									Invalid Joining Year
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="text-center">Waiver of Liability, Communications Agreement, and Photograph Consent</h4>
+						</div>
+						<div class="panel-body">
+							<div class="container">
+
+								<!-- Liability Agreed -->
+								<div class="form-inline">
+									<div class="checkbox">
+										<label for="liabilityagreed">
+								<input type="checkbox" class="form-control" id="liabilityagreed" #liabilityagreed="ngForm" [formControl]="RenewMembershipForm.controls[ 'liabilityagreed']" [(ngModel)]="member.liabilityagreed">
+								<strong>Release of Liability, Waiver, &#38; Claims<small style="color:red">&nbsp;&nbsp;required&nbsp;&nbsp;</small>
+								<a (click)="showLiabilityAgreement()" style="cursor:pointer"> 
+									<span>
+										<i class="glyphicon glyphicon-new-window"></i>
+									</span>
+								</a>
+								</strong>
+							</label>
+									</div>
+								</div>
+
+								<!-- Communications Consent -->
+								<div class="form-inline">
+									<div class="checkbox">
+										<label for="communicationsagreed">
+								<input type="checkbox" class="form-control" id="communicationsagreed" #communicationsagreed="ngForm" [formControl]="RenewMembershipForm.controls['communicationsagreed']" [(ngModel)]="member.communicationsagreed">
+								<strong>Communications Consent<small style="color:red">&nbsp;&nbsp;required&nbsp;&nbsp;</small>
+								<a (click)="showCommunicationsConsent()" style="cursor:pointer">
+									<span>
+										<i class="glyphicon glyphicon-new-window"></i>
+									</span>
+								</a>
+								</strong>
+							</label>
+									</div>
+								</div>
+
+								<!-- Photo Agreed -->
+								<div class="form-inline">
+									<div class="checkbox">
+										<label for="photoagreed">
+											<input type="checkbox" class="form-control" id="photoagreed" #photoagreed="ngForm" [formControl]="RenewMembershipForm.controls['photoagreed']" [(ngModel)]="member.photoagreed">
+											<strong>Photo Agreed</strong>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h4 class="text-center">Fee Related Questions</h4>
+						</div>
+						<div class="panel-body">
+							<!-- Student -->
+							<div class="form-inline">
+								<div class="checkbox">
+									<label for="student">
+										<input type="checkbox" class="form-control" id="student" #student="ngForm" [formControl]="RenewMembershipForm.controls[ 'student']" [(ngModel)]="member.student">
+										<strong>Student</strong>
+									</label>
+								</div>
+							</div>
+
+							<!-- Family Email Address -->
+							<div *ngIf="!member.student">
+								<div class="form-group">
+									<label for="familyemailaddress">Family Email Address</label>
+									<input type="email" class="form-control" id="familyemailaddress" #familyemailaddress="ngForm" [formControl]="RenewMembershipForm.controls[ 'familyemailaddress']"
+										[(ngModel)]="member.familyemailaddress">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-primary" type="button" [disabled]="RenewMembershipForm.pristine || 
+                        !RenewMembershipForm.valid ||
+                        !member.liabilityagreed ||
+                        !member.communicationsagreed" (click)="Renew()">Renew</button>
+				<button class="btn btn-warning" type="button" (click)="hideForm()">Cancel</button>
+			</div>
+		</div>
+	</div>
+</div>

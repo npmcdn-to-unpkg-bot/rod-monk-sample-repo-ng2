@@ -1,0 +1,64 @@
+<mission-and-values-modal></mission-and-values-modal>
+<div class="container hidden-xs hidden-sm hidden-md visible-lg">
+	<hr>
+</div>
+<div class="container">
+	<div class="hidden-xs hidden-sm hidden-md col-lg-3">
+		<div class="panel" style="cursor:pointer">
+			<div class="panel-heading" style="background-image: none;" id="panel-etiquette">
+				<h3 class="h4 text-center"> Tennis Etiquette
+					<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+				</h3>
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item" id="list-etiquette0">
+					<p class="h5">{{etiquetteTextArea[0]}}</p>
+				</li>
+				<li class="list-group-item" id="list-etiquette1">
+					<p class="h5">{{etiquetteTextArea[1]}}</p>
+				</li>
+				<li class="list-group-item" id="list-etiquette2">
+					<p class="h5">{{etiquetteTextArea[2]}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-9 col-lg-6">
+		<p class="lead">
+			<strong>Welcome</strong> to the friendliest little tennis club in metro Vancouver, Canada. We are an inclusive club of
+			<strong>{{memberCount}}</strong> members that welcomes tennis players of all levels. For those just starting out, both
+			Junior and Adult training is available through the club. For the more experienced player, we have an engaged and talented
+			membership that will challenge you. The social component of the club is also significant: the Friday Evening Socials have
+			been a mainstay of the club for over 40 years. In addition, a number of inter- and intra-club tournaments are organized
+			throughout the season. Further, a number of TTC teams play league under the aegis of TennisBC. A full statement of the
+			Club's Mission and Values statement can be found here:
+			<a (click)="showMissionAndValues()" style="cursor:pointer">
+			Mission &#38; Values
+			</a>
+		</p>
+
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20937.059848547935!2d-123.090671684394!3d49.00806449811034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485e5d9b63e84e5%3A0x5b2ae53d28f74de6!2sTsawwassen+Tennis+Club!5e0!3m2!1sen!2sca!4v1471110130064"
+			width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	</div>
+	<div class="hidden-xs hidden-sm col-md-3">
+		<div class="panel" style="cursor:pointer">
+			<div class="panel-heading" style="background-image: none;" id="panel-trivia">
+				<h3 class="h4 text-center">Tennis Trivia
+					<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+				</h3>
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item" id="list-trivia0" class="list-trivia">
+					<p class="h5">{{triviaTextArea[0]}}</p>
+				</li>
+				<li class="list-group-item" id="list-trivia1" class="list-trivia">
+					<p class="h5">{{triviaTextArea[1]}}</p>
+				</li>
+				<li class="list-group-item" id="list-trivia2" class="list-trivia">
+					<p class="h5">{{triviaTextArea[2]}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

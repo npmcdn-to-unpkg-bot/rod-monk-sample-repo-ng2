@@ -1,0 +1,52 @@
+<message-modal (onClosed)="messageModalClosed($event)">
+</message-modal>
+<div *ngIf="IsVisible" class="modal fade show in danger" id="newsItemModal" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add a News Item</h3>
+            </div>
+            <div class="modal-body">
+                <form name="newsItemForm" novalidate>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="text-center">Headline</h3>
+                        </div>
+                        <textarea autofocus [(ngModel)]="newsItem.headline" name="newsItemHeadline" required placeholder="Provide a headline for your News Item" ng-trim="true" cols="75" rows="1">
+                         </textarea>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="text-center">Body</h3>
+                        </div> <textarea [(ngModel)]="newsItem.body" name="newsItemBody" ng-maxlength="4000" required placeholder=" HTML Headers and Lists are permitted"
+                            ng-trim="true" cols="75" rows="10">
+			            </textarea>
+                    </div>
+                </form>
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="text-center">Images</h3>
+                    </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <span class="btn btn-primary btn-file"><input type="file" accept="image/*" multiple (change)="fileChangeEvent($event)"/></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button [disabled]="!readyToUpload" class="btn btn-primary" type="button" (click)="upload()">Upload</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" [disabled]="!newsItem.headline || !newsItem.body" (click)="publishNewsItem()">Publish</button>
+                <button class="btn btn-warning" type="button" (click)="closeNewsItemManagement()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

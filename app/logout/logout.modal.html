@@ -1,0 +1,13 @@
+<div *ngIf="IsVisible" class="modal fade show in danger" id="personalprofilemodal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Are you sure that you wish to Logout?</h2>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="onLogout()">Yes</button>
+                <button class="btn btn-warning" (click)="hideForm()">No</button>
+            </div>
+        </div>
+    </div>
+</div>
